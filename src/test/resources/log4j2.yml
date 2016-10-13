@@ -1,0 +1,31 @@
+status: warn
+monitorInterval: 30
+
+appenders:
+    Console:
+      - name: stdout
+        target: SYSTEM_OUT
+        ThresholdFilter:
+          level: warn
+          onMatch: deny
+          onMismatch: accept
+        PatternLayout: { pattern: "%d [%t] %p %c{1.}.%M():%L - %m %rEx%n" }
+
+      - name: stderr
+        target: SYSTEM_ERR
+        ThresholdFilter:
+          level: warn
+        PatternLayout: { pattern: "%d [%t] %p %c{1.}.%M():%L - %m %rEx%n" }
+
+loggers:
+    root:
+      level: warn
+      appender-ref:
+        - ref: stdout
+        - ref: stderr
+    logger:
+      - name: com.musicqubed
+        level: debug
+
+      - name: org.springframework
+        level: info

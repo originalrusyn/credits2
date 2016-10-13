@@ -1,0 +1,9 @@
+Project-Version: ${project.version}
+Serving-Url: http://${app.api.version}.${app.id}.appspot.com
+Core-Server-Url: ${core.server.url}
+Bamboo-Build-Plan: ${bambooBuildPlan}
+Bamboo-Build-Number: ${bambooBuildNumber}
+Bamboo-Deploy-Plan: ${bambooDeployPlan}
+Bamboo-Deploy-Number: ${bambooDeployNumber}
+Repository-Branch: ${repositoryBranch}
+Repository-Commit: ${repositoryCommit}
