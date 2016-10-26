@@ -1,5 +1,4 @@
-status: warn
-monitorInterval: 30
+status: info
 
 appenders:
     Console:
@@ -9,17 +8,17 @@ appenders:
           level: warn
           onMatch: deny
           onMismatch: accept
-        PatternLayout: { pattern: "%d [%t] %p %c{1.}.%M():%L - %m %rEx%n" }
+        PatternLayout: { pattern: "%d [%t] %p %c{1.} - %m %rEx%n" }
 
       - name: stderr
         target: SYSTEM_ERR
         ThresholdFilter:
           level: warn
-        PatternLayout: { pattern: "%d [%t] %p %c{1.}.%M():%L - %m %rEx%n" }
+        PatternLayout: { pattern: "%d [%t] %p %c{1.} - %m %rEx%n" }
 
 loggers:
     root:
-      level: warn
+      level: trace
       appender-ref:
         - ref: stdout
         - ref: stderr
